@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#1d2b53" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>GO SPORTS · Controle</title>
+  <link rel="icon" href="assets/icon.svg" />
+  <link rel="stylesheet" href="css/controller.css" />
+</head>
+<body>
+  <header id="bar">
+    <span id="dot" class="dot"></span>
+    <span id="status">Conectando…</span>
+    <span id="slot" class="slot hidden">J1</span>
+    <button id="menuBtn" class="icon-btn" aria-label="Ajustes">⚙️</button>
+  </header>
+
+  <!-- 1. Conexão -->
+  <section id="s-connect" class="screen">
+    <div class="logo">GO <b>SPORTS</b></div>
+    <p class="lead" id="connectMsg">Digite o código que aparece na TV</p>
+    <div id="codeForm" class="code-form hidden">
+      <input id="codeInput" maxlength="4" autocomplete="off" autocapitalize="characters" placeholder="ABCD" />
+      <button id="codeBtn" class="big-btn">Conectar</button>
+    </div>
+  </section>
+
+  <!-- 2. Permissão dos sensores -->
+  <section id="s-perm" class="screen hidden">
+    <div class="emoji-big">📱✨</div>
+    <h2>Seu celular é o controle!</h2>
+    <p class="lead">Vamos usar o movimento do celular para jogar. Toque abaixo para ativar os sensores.</p>
+    <button id="permBtn" class="big-btn primary">Ativar sensores de movimento</button>
+    <button id="noSensorBtn" class="link-btn">Usar sem sensores (botões de toque)</button>
+  </section>
+
+  <!-- 3. Calibração -->
+  <section id="s-cal" class="screen hidden">
+    <div class="step-count" id="calCount">Passo 1 de 3</div>
+    <div class="emoji-big anim" id="calEmoji">✋</div>
+    <h2 id="calTitle">Segure parado</h2>
+    <p class="lead" id="calDesc">Segure o celular como um controle, com a tela para cima e apontando para a TV.</p>
+    <div class="progress"><div id="calBar"></div></div>
+    <button id="calSkip" class="link-btn">Pular calibração (usar padrão)</button>
+  </section>
+
+  <!-- 4. Controle -->
+  <section id="s-pad" class="screen hidden">
+    <p id="hint" class="hint">Arraste para mover o cursor · toque para clicar</p>
+    <div id="pad" class="pad"><span class="pad-label">TOUCHPAD</span><div id="padDot" class="pad-dot"></div></div>
+    <div id="actions" class="actions"></div>
+    <div id="sim" class="sim hidden">
+      <div class="sim-title">Gestos por toque</div>
+      <div class="sim-grid">
+        <button data-sim="soft">Balanço fraco</button>
+        <button data-sim="mid">Balanço médio</button>
+        <button data-sim="hard">Balanço forte</button>
+        <button data-sim="up">Por cima ⤴</button>
+        <button data-sim="down">Por baixo ⤵</button>
+        <button data-sim="twist">Com efeito ⟳</button>
+        <button data-sim="left">⟵ Esquerda</button>
+        <button data-sim="right">Direita ⟶</button>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="btn-b" data-btn="B">B<small>Voltar</small></button>
+      <div class="dpad">
+        <button data-btn="up">▲</button>
+        <button data-btn="left">◀</button>
+        <button data-btn="right">▶</button>
+        <button data-btn="down">▼</button>
+      </div>
+      <button class="btn-a" data-btn="A">A<small>OK</small></button>
+    </div>
+    <div class="row-small">
+      <button data-btn="pause" class="pill">⏸ Pausa</button>
+      <button data-btn="center" class="pill">🎯 Centralizar</button>
+    </div>
+  </section>
+
+  <!-- Entrada de texto pedida pela TV -->
+  <section id="s-text" class="overlay hidden">
+    <div class="card">
+      <h3 id="textPrompt">Digite</h3>
+      <input id="textInput" autocomplete="off" />
+      <div class="row">
+        <button id="textCancel" class="big-btn">Cancelar</button>
+        <button id="textOk" class="big-btn primary">Enviar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ajustes -->
+  <section id="s-settings" class="overlay hidden">
+    <div class="card">
+      <h3>Ajustes do controle</h3>
+      <label class="field">Sensibilidade do touchpad <input id="sens" type="range" min="0.5" max="3" step="0.1" value="1.4" /></label>
+      <label class="field check"><input id="lefty" type="checkbox" /> Sou canhoto(a)</label>
+      <label class="field check"><input id="simToggle" type="checkbox" /> Mostrar gestos por toque</label>
+      <button id="recal" class="big-btn">Refazer calibração</button>
+      <button id="closeSettings" class="big-btn primary">Fechar</button>
+      <p class="tiny">Os dados de movimento vão só para a sua tela de jogo. Nenhuma câmera é usada no celular.</p>
+    </div>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="js/controller/main.js"></script>
+</body>
+</html>

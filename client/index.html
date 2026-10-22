@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1d2b53" />
+  <meta name="description" content="GO SPORTS: esportes em família com o celular como controle de movimento. Tênis, vôlei, boliche, golfe, beisebol, boxe, basquete, tênis de mesa e arco e flecha." />
+  <title>GO SPORTS</title>
+  <!-- Verificação do AdSense: tire o comentário e coloque seu ID (veja TUTORIAL_PUBLICAR.md, passo 8) -->
+  <!-- <meta name="google-adsense-account" content="ca-pub-0000000000000000" /> -->
+  <link rel="icon" href="assets/icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="gl"></canvas>
+  <div id="ui"></div>
+  <div id="hud"></div>
+  <div id="banner"></div>
+  <div id="cursor" class="hidden"><div class="cursor-hand"></div></div>
+  <div id="toasts"></div>
+  <aside id="ad-banner" class="ad-slot hidden" aria-label="Publicidade"></aside>
+  <div id="consent" class="hidden"></div>
+  <button id="soundGate" class="hidden">🔈 Clique aqui para ativar o som</button>
+  <div id="loading"><div class="logo-big">GO <span>SPORTS</span></div><div class="spinner"></div></div>
+  <noscript>O GO SPORTS precisa de JavaScript ativado.</noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

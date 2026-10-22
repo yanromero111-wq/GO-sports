@@ -1,0 +1,16 @@
+# Blueprint do Render (backend: API + WebSocket). Render > New > Blueprint > selecione este repositório.
+services:
+  - type: web
+    name: go-sports-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        sync: false # cole o endereço do front-end na Vercel, ex.: https://go-sports.vercel.app
+      - key: DATABASE_URL
+        sync: false # cole a "connection string" do Postgres gratuito (Neon/Supabase)
