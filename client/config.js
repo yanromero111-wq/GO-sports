@@ -5,6 +5,6 @@ export const CONFIG = {
   SERVER_URL: 'https://go-sports-1.onrender.com',
   // Endereço público do front-end, usado no QR code quando definido (ex.: 'https://go-sports.vercel.app').
   // Vazio = detecta automaticamente.
-  PUBLIC_URL: '',
+  PUBLIC_URL: 'https://go-sports-omega.vercel.app',
   VERSION: '1.0.0',
 };
